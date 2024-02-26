@@ -10,6 +10,13 @@ console.log(path.join(__dirname, '/views'));
      res.render('home')
  });
 
+ app.use(express.static('public'));
+ app.use(express.static(path.join(__dirname, '/public')));
+ app.get('/rand',(req,res)=>{ //set route ke /rand
+    const num = Math.floor(Math.random()*10)+2;
+     res.render('random', {num});
+ });
+
 app.listen(port,()=>{
     console.log('listening on port htp://localhost:8080');
 });

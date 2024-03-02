@@ -10,7 +10,7 @@ console.log(path.join(__dirname, '/views'));
      res.render('home')
  });
 
- app.use(express.static('public'));
+ app.use(express.static('public')); // membuat folder asset statik agar tidak dianggap sbg route
  app.use(express.static(path.join(__dirname, '/public')));
  app.get('/rand',(req,res)=>{ //set route ke /rand
     const num = Math.floor(Math.random()*10)+2;
